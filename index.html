@@ -4,16 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokédex Pokémon</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="./img/favicon.png" type="image/x-icon">
 </head>
 <body>
-    
-    <div>
-        <input type="text" id="buscar" placeholder="Buscar Pokémon por su nombre o número de Pokédex">
-    </div>
 
-    <section id="buscadormal">
+    <header>
+        <img src="./img/logo.svg" alt="Logo pokedex" id="logo">
+    </header>
+    
+    <h2 id="buscalo">Busca el Pokémon por su nombre o ID</h2>
+
+        <section id="elBuscador">
+            <div class="container_buscador">
+                <input type="search" id="nombrePokemon" placeholder="Buscar nombre del Pokémon o número...">
+                <img src="./img/pokeball.png" alt="pokeball-search" id="pokemonSearch">
+            </div>
+        </section>
+
+    <section id="buscador">
 
     </section>
-    <script src="index.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 </html>

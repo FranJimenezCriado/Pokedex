@@ -1,8 +1,8 @@
 'use strict';
 
-const buscador = document.getElementById('buscar');
+const buscador = document.getElementById('nombrePokemon');
 
-const appNode = document.getElementById('buscadormal');
+const appNode = document.getElementById('buscador');
 
 const buscarPokemon = () => {
   fetch('https://pokeapi.co/api/v2/pokemon?limit=1126')
@@ -11,14 +11,10 @@ const buscarPokemon = () => {
     })
 
     .then((data) => {
-      console.log(data.results);
-
       buscador.addEventListener('keyup', function buscar(key) {
         appNode.innerHTML = '';
         if (key.key === 'Enter') {
           const valor = buscador.value;
-
-          console.log(valor);
 
           async function buscarFinal() {
             let filtrado = data.results.filter(
@@ -26,8 +22,6 @@ const buscarPokemon = () => {
                 pokemon.name.includes(valor.toLowerCase()) ||
                 pokemon.url.includes(`/${valor}/`)
             );
-
-            console.log(filtrado);
 
             if (filtrado.length === 0) {
               const mensajeError = document.createElement('p'); // Crea un nuevo elemento p
@@ -49,7 +43,6 @@ const buscarPokemon = () => {
               for (let pokemonInfo in responsePokemonJSON) {
                 resultado.push([pokemonInfo, responsePokemonJSON[pokemonInfo]]);
               }
-              console.log(resultado);
 
               const typeColors = {
                 electric: '#E8E100',
